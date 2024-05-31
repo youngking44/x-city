@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
 
   return (
-    <header className="w-full h-[100px] fixed flex items-center z-40 bg-orange-200">
+    <header className="w-full h-[100px] fixed flex items-center z-40 bg-white shadow-md">
       <Container>
         <div
           className={`font-[500] flex justify-between md:justify-start items-center ${gap}`}
