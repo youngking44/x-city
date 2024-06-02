@@ -15,7 +15,9 @@ const config: Config = {
         },
         accent: {
           500: "#fece51",
+          300: "#ffe9b3",
         },
+        "soft-black": "#444",
       },
     },
     screens: {
