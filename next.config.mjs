@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "**",
       },
+      {
+        hostname: "media.gettyimages.com",
+        protocol: "https",
+        port: "",
+        pathname: "**",
+      },
     ],
   },
 };

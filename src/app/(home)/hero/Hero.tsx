@@ -22,7 +22,13 @@ const Hero = () => {
             <Rating />
           </div>
           <div className="flex-1 relative hidden md:block">
-            <Image fill src="/assets/bg.png" alt="" className="object-cover" />
+            <Image
+              fill
+              src="/assets/bg.png"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt=""
+              className="object-cover"
+            />
           </div>
         </div>
       </Container>
