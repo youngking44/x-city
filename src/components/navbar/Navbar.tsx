@@ -19,16 +19,18 @@ const Navbar = () => {
         <div
           className={`font-[500] flex justify-between md:justify-start items-center ${gap}`}
         >
-          <div className="flex items-center gap-2">
-            <Image
-              width={40}
-              height={40}
-              src="/assets/logo/logo.png"
-              alt="Logo"
-              className="object-cover"
-            />
-            <span className="text-[20px] font-bold">X-City</span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center gap-2">
+              <Image
+                width={40}
+                height={40}
+                src="/assets/logo/logo.png"
+                alt="Logo"
+                className="object-cover"
+              />
+              <span className="text-[20px] font-bold">X-City</span>
+            </div>
+          </Link>
           <div
             className={`md:flex-1 flex flex-col md:flex-row md:justify-between md:items-center w-[60%] 
             md:w-auto h-screen md:h-auto pt-[100px] md:pt-0 px-5 md:px-0 absolute md:static top-0

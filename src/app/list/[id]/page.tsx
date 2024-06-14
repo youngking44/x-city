@@ -17,7 +17,7 @@ const SinglePage = ({ params }: SinglePageProps) => {
     <main>
       <section className="w-full relative">
         <Container>
-          <div className="w-full min-h-screen pt-[160px] pb-10 flex gap-5">
+          <div className="w-full min-h-screen flex flex-col md:flex-row gap-10 flex-wrap">
             <LeftInfo data={data} />
             <RightInfo data={data} />
           </div>

@@ -11,9 +11,9 @@ interface LeftInfoProps {
 
 const LeftInfo = ({ data }: LeftInfoProps) => {
   return (
-    <div className="flex-[3] flex flex-col gap-5">
+    <div className="flex-[3] flex flex-col gap-5 pt-[160px]">
       <ImageGallery images={data.images} />
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="font-bold">{data.title}</h2>
           <div className="flex items-center gap-2 text-sm">

@@ -12,8 +12,6 @@ interface ImageGalleryProps {
   images: string[];
 }
 
-const btnStyles = "absolute text-white cursor-pointer";
-
 const ImageGallery = ({ images }: ImageGalleryProps) => {
   const [slidingIndex, setSlidingIndex] = useState(0);
   const [showSlide, setShowSlide] = useState(false);
@@ -41,22 +39,49 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
     <div
       className={`${
         showSlide
-          ? "w-screen h-screen absolute top-0 left-0 z-50 flex justify-center items-center bg-black"
-          : "flex gap-5"
+          ? "md:w-screen md:h-screen md:absolute top-0 left-0 md:z-50 flex flex-col md:flex-row justify-center items-center gap-5 md:bg-black"
+          : "flex flex-col md:flex-row gap-5"
       }`}
     >
       <div
         className={`${
           showSlide
-            ? "w-[calc(100vw-300px)] h-[calc(100vh-140px)]"
-            : "flex-1 cursor-pointer"
+            ? "w-full md:w-[calc(100vw-300px)] md:h-[calc(100vh-140px)]"
+            : "flex-1 min-h-[200px] md:h-auto cursor-pointer"
         } relative`}
-        onClick={() => handleOpenSlide(0)}
       >
-        <Image fill src={images[slidingIndex]} alt="" />
+        <div
+          className="w-full min-h-[200px] md:h-full relative"
+          onClick={() => handleOpenSlide(0)}
+        >
+          <Image
+            fill
+            src={images[slidingIndex]}
+            alt=""
+            className="object-cover"
+          />
+        </div>
+        <div
+          className={`absolute top-[50%] left-[-10px] -translate-y-1/2 text-white bg-black cursor-pointer ${
+            showSlide ? "md:left-[-60px]" : "md:hidden"
+          }`}
+          onClick={() => handleSlide("prev")}
+        >
+          <MdOutlineKeyboardArrowLeft size={40} />
+        </div>
+        <div
+          className={`absolute top-[50%] right-[-10px] -translate-y-1/2 text-white bg-black cursor-pointer ${
+            showSlide ? "md:right-[-60px]" : "md:hidden"
+          }`}
+          onClick={() => handleSlide("next")}
+        >
+          <MdOutlineKeyboardArrowRight size={40} />
+        </div>
       </div>
       <div
-        className={`w-[170px] ${showSlide ? "hidden" : "flex flex-col gap-5"}`}
+        className={`w-full md:w-[170px] ${
+          showSlide ? "flex gap-5 md:hidden" : "flex md:flex-col gap-5"
+        }`}
       >
         {images.slice(1).map((img, index) => (
           <div
@@ -69,22 +94,14 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
         ))}
       </div>
       <div
-        className={showSlide ? `${btnStyles} top-5 right-[100px]` : "hidden"}
+        className={
+          showSlide
+            ? `absolute top-5 right-[100px] md:text-white cursor-pointer`
+            : "hidden"
+        }
         onClick={() => handleCloseSlide()}
       >
         <IoMdClose size={40} />
-      </div>
-      <div
-        className={showSlide ? `${btnStyles} left-[100px]` : "hidden"}
-        onClick={() => handleSlide("prev")}
-      >
-        <MdOutlineKeyboardArrowLeft size={40} />
-      </div>
-      <div
-        className={showSlide ? `${btnStyles} right-[100px]` : "hidden"}
-        onClick={() => handleSlide("next")}
-      >
-        <MdOutlineKeyboardArrowRight size={40} />
       </div>
     </div>
   );
