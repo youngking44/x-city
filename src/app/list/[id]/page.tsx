@@ -14,8 +14,8 @@ const SinglePage = ({ params }: SinglePageProps) => {
   const data = singlePostData;
 
   return (
-    <main>
-      <section className="w-full relative">
+    <main className="relative">
+      <section className="w-full h-screen overflow-y-scroll">
         <Container>
           <div className="w-full min-h-screen flex flex-col md:flex-row gap-10 flex-wrap">
             <LeftInfo data={data} />

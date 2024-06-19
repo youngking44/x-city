@@ -1,10 +1,10 @@
 import Container from "@/components/container/Container";
 import { listData } from "@/lib/dummydata";
 import React from "react";
-import Card from "./components/card/Card";
 import Filter from "./components/filter/Filter";
 import Map from "./components/map/Map";
 import "leaflet/dist/leaflet.css";
+import Card from "@/components/card/Card";
 
 const ListPage = () => {
   const data = listData;

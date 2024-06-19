@@ -9,9 +9,9 @@ interface CardProps {
 
 const Card = ({ item }: CardProps) => {
   return (
-    <div className="flex gap-5">
-      <div className="relative flex-[2] h-[200px]">
-        <Image fill src={item.img} alt={item.title} />
+    <div className="flex flex-col md:flex-row gap-5">
+      <div className="relative flex-[2] min-h-[200px]">
+        <Image fill src={item.img} alt={item.title} className="object-cover" />
       </div>
       <div className="flex-[3] flex flex-col gap-5">
         <h2

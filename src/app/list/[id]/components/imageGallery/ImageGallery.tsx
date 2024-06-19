@@ -39,14 +39,14 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
     <div
       className={`${
         showSlide
-          ? "md:w-screen md:h-screen md:absolute top-0 left-0 md:z-50 flex flex-col md:flex-row justify-center items-center gap-5 md:bg-black"
+          ? "w-full md:h-screen md:absolute top-0 left-0 md:z-50 flex flex-col md:flex-row justify-center items-center gap-5 md:bg-black"
           : "flex flex-col md:flex-row gap-5"
       }`}
     >
       <div
         className={`${
           showSlide
-            ? "w-full md:w-[calc(100vw-300px)] md:h-[calc(100vh-140px)]"
+            ? "w-full md:w-[calc(100%-300px)] md:h-[calc(100%-140px)]"
             : "flex-1 min-h-[200px] md:h-auto cursor-pointer"
         } relative`}
       >
