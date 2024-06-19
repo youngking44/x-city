@@ -4,7 +4,7 @@ import React from "react";
 import Filter from "./components/filter/Filter";
 import Map from "./components/map/Map";
 import "leaflet/dist/leaflet.css";
-import Card from "@/components/card/Card";
+import RenderCards from "./components/renderCards/RenderCards";
 
 const ListPage = () => {
   const data = listData;
@@ -12,17 +12,21 @@ const ListPage = () => {
     <main>
       <section className="w-full">
         <Container>
-          <div className="w-full h-screen flex">
-            <div className="flex-1 pt-[160px] pb-10 pr-5 overflow-y-auto">
+          <div className="w-full md:h-screen flex flex-col md:flex-row md:gap-5">
+            <div
+              className="flex-1 md:flex-[2] lg:flex-1 pt-[140px] md:pt-[160px] pb-10 md:pr-4 
+              overflow-y-auto"
+            >
               <Filter />
-              <div className="flex flex-col gap-5 mt-5">
-                {data.map((item) => (
-                  <Card key={item.id} item={item} />
-                ))}
-              </div>
+              <RenderCards />
             </div>
-            <div className="flex-1 pt-[160px]">
-              <Map items={data} />
+            <div
+              className="h-[250px] md:h-auto md:flex-1 md:pt-[100px] pb-10 md:pb-0 flex justify-center 
+              items-center"
+            >
+              <div className="w-full h-full max-h-[500px] md:py-10">
+                <Map items={data} />
+              </div>
             </div>
           </div>
         </Container>
